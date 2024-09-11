@@ -1,0 +1,8 @@
+# Django 관련
+db.sqlite3
+/static/
+media/
+
+# Python 관련
+*.pyc
+__pycache__/
