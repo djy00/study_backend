@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +15,7 @@ SECRET_KEY = 'django-insecure-24n^_3+16mi9+39^f0i$^ff=z5bd0x+@3tw(g6z3m@lucmt#ad
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+print(BASE_DIR)
 
 # Application definition
 
@@ -30,8 +31,9 @@ INSTALLED_APPS = [
 # 새로 추가한 APP
 
 INSTALLED_APPS += [
-    'mainapp'
+    'mainapp',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,7 +50,7 @@ ROOT_URLCONF = 'codedemo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
